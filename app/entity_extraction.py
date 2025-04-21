@@ -48,27 +48,25 @@ def extract_entities_with_llm(nlq, api_key, model, llm_provider, system_prompt_p
     return entities
 
   
-def get_entities(entity_names, sparql_endpoint_url, lang="en"):
+def get_entities(entity_names, local_graph_location, lang="en"):
     """
-    Queries a Fuseki SPARQL endpoint to resolve entity names to URIs.
-    
+    Queries a local RDF graph to resolve entity names to URIs.
+
     Args:
         entity_names (list): List of entity names to resolve.
-        sparql_endpoint_url (str): URL of the hosted Fuseki SPARQL endpoint (e.g., http://host:3030/dbpedia/sparql).
+        local_graph_location (str): Path to folder containing RDF files.
         lang (str): Language tag for labels (default: 'en').
 
     Returns:
         dict: Mapping from entity name to resolved URI.
     """
 
-    entities = {}
+    resolved_entities = {}
     lang_tag = f"@{lang}"  # Dynamic language tag
-    predicate = "rdfs:label"  # Standard label in DBpedia-style RDF
+    predicate = "rdfs:label"  # Standard RDF label
 
-    print(f"[INFO] Using Fuseki endpoint at {sparql_endpoint_url}")
+    print(f"[INFO] Querying local RDF graph at {local_graph_location}")
     print(f"[INFO] Resolving entities: {entity_names}")
-
-    headers = {"Accept": "application/sparql-results+json", "User-Agent": "EntityResolver/1.0"}
 
     for entity_name in entity_names:
         sparql_query = f"""
@@ -79,32 +77,19 @@ def get_entities(entity_names, sparql_endpoint_url, lang="en"):
         LIMIT 1
         """
 
-        print(f"[DEBUG] Querying for entity: '{entity_name}'")
+        print(f"[DEBUG] Running SPARQL for entity: '{entity_name}'")
 
         try:
-            response = requests.get(
-                sparql_endpoint_url,
-                params={"query": sparql_query, "format": "json"},
-                headers=headers,
-                timeout=15
-            )
-            response.raise_for_status()
-        except requests.RequestException as e:
-            print(f"[ERROR] Failed request for '{entity_name}': {e}")
-            continue
-
-        try:
-            bindings = response.json().get("results", {}).get("bindings", [])
-            if bindings:
-                entity_uri = bindings[0]["entity"]["value"]
-                entities[entity_name] = entity_uri
-                print(f"[INFO] Resolved '{entity_name}' -> {entity_uri}")
+            results = Utils.query_local_graph(local_graph_location, sparql_query)
+            if results:
+                resolved_entities[entity_name] = results[0]  # pick first match
+                print(f"[INFO] Resolved '{entity_name}' -> {results[0]}")
             else:
                 print(f"[WARNING] No entity found for '{entity_name}'")
         except Exception as e:
-            print(f"[ERROR] JSON parse error for '{entity_name}': {e}")
+            print(f"[ERROR] Failed query for '{entity_name}': {e}")
 
-    return entities
+    return resolved_entities
 
     
 def extract_entities(question, dataset):
@@ -126,12 +111,12 @@ def extract_entities(question, dataset):
     system_prompt_path = config["SYSTEM_PROMPT_PATH"]
     max_tokens = config["MAX_TOKENS"]
     temperature = config["TEMPERATURE"]
-    sparql_endpoint_url = config["SPARQL_ENDPOINT_URL"]
+    local_graph_location = config["DBPEDIA_GRAPH_LOCATION"]
 
     # Extract entities using LLM
     llm_extracted_entities = extract_entities_with_llm(question, api_key, model, llm_provider, system_prompt_path, max_tokens, temperature)
 
     # Query dataset to get entity IDs for all extracted names
-    dataset_entities_resolved = get_entities(llm_extracted_entities, sparql_endpoint_url)
+    dataset_entities_resolved = get_entities(llm_extracted_entities, local_graph_location)
     
     return dataset_entities_resolved

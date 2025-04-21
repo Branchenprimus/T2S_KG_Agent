@@ -82,36 +82,6 @@ class Utils:
             return "xml"
         else:
             return "turtle"  # default fallback
-
-    @staticmethod
-    def query_local_graph(sparql_query: str, graph_folder: str) -> list:
-        """
-        Executes a SPARQL query against a local RDF graph composed from multiple RDF files in a folder.
-        
-        Args:
-            sparql_query: SPARQL query string.
-            graph_folder: Path to a folder containing RDF files (.ttl, .rdf, .nt).
-
-        Returns:
-            List of stringified query result values or {"error": "..."} on failure.
-        """
-        try:
-            g = Graph()
-
-            for fname in os.listdir(graph_folder):
-                if fname.endswith((".ttl", ".rdf", ".nt")):
-                    fpath = os.path.join(graph_folder, fname)
-                    fmt = Utils.guess_rdf_format(fpath)
-                    g.parse(fpath, format=fmt)
-
-            if len(g) == 0:
-                return {"error": "No RDF triples were loaded from the folder."}
-
-            qres = g.query(sparql_query)
-            return [str(val) for row in qres for val in row]
-
-        except Exception as e:
-            return {"error": str(e)}
         
     @staticmethod
     def is_faulty_result(result):
@@ -122,3 +92,56 @@ class Utils:
         if all(str(r).strip() == "0" for r in result):
             return True
         return False
+    
+    @staticmethod
+    def query_local_graph(local_graph_location: str, sparql_query: str) -> list:
+        """
+        Loads RDF triples from a local folder into an rdflib Graph and executes a SPARQL query.
+
+        Args:
+            local_graph_location (str): Path to folder containing .ttl, .rdf, or .nt files.
+            sparql_query (str): SPARQL query string to execute.
+
+        Returns:
+            list: List of stringified query results (flattened).
+        """
+        g = Graph()
+
+        if not os.path.isdir(local_graph_location):
+            print(f"[ERROR] Provided path is not a directory: {local_graph_location}")
+            return []
+
+        rdf_extensions = (".ttl", ".rdf", ".nt")
+        files = [f for f in os.listdir(local_graph_location) if f.endswith(rdf_extensions)]
+
+        if not files:
+            print(f"[WARNING] No RDF files found in {local_graph_location}")
+            return []
+
+        for fname in files:
+            fpath = os.path.join(local_graph_location, fname)
+            fmt = (
+                "ttl" if fname.endswith(".ttl")
+                else "nt" if fname.endswith(".nt")
+                else "xml"
+            )
+            try:
+                print(f"[INFO] Loading {fname} as format {fmt}")
+                g.parse(fpath, format=fmt)
+            except Exception as e:
+                print(f"[ERROR] Failed to parse {fname}: {e}")
+
+        if len(g) == 0:
+            print(f"[WARNING] No triples loaded after parsing files in {local_graph_location}")
+            return []
+
+        print(f"[INFO] Loaded {len(g)} triples from {local_graph_location}")
+        
+        try:
+            qres = g.query(sparql_query)
+            results = [str(val) for row in qres for val in row]
+            print(f"[INFO] Query returned {len(results)} result(s)")
+            return results
+        except Exception as e:
+            print(f"[ERROR] Failed to execute SPARQL query: {e}")
+            return []
