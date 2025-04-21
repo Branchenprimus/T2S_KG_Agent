@@ -3,7 +3,7 @@ import argparse
 import re
 import requests
 from openai import OpenAI
-from utility import Utils
+from app.utility import Utils
 
 def extract_entities_with_llm(nlq, api_key, model, llm_provider, system_prompt_path, max_tokens, temperature):
     """

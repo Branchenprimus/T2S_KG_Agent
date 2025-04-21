@@ -1,5 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from app.config import KNOWN_DATASETS
 from app.entity_extraction import extract_entities
 from app.shape_generation import generate_shape
 from app.llm_query_generator import generate_sparql_query

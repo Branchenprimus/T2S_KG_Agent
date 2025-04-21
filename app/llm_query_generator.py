@@ -1,4 +1,4 @@
-def generate_query(prompt):
+def generate_sparql_query(prompt):
     """
     Function to generate a query based on the given prompt.
     Currently, it only prints the prompt.
@@ -15,5 +15,5 @@ def generate_query(prompt):
 if __name__ == "__main__":
     # Example usage
     example_prompt = "What is the capital of France?"
-    result = generate_query(example_prompt)
+    result = generate_sparql_query(example_prompt)
     print(result)
