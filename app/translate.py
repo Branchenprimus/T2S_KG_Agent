@@ -1,7 +1,7 @@
 import os
 import openai
 from typing import Dict
-from utils import Utils  # Adjust import if needed
+from app.utility import Utils
 
 # Set your OpenAI API key
 openai.api_key = os.getenv("LLM_API_KEY")
