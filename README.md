@@ -20,6 +20,24 @@ By the time of evaluation, the API can be called under http://167.172.162.197:80
 
 ---
 
+## Retry mechanism
+
+A SPARQL query is considered "faulty" if one of the following holds:
+
+- **Result contains `"error"`**:  
+  → Query failed and returned an error (e.g., bad endpoint call, syntax error).
+
+- **Result is empty (`not result`)**:  
+  → No data was retrieved, or the query failed silently.
+
+- **All values are `"0"`**:  
+  → Query returned meaningless results (often due to wrong `COUNT` aggregation).
+
+Otherwise, the query is considered "good" and no retry is triggered.
+
+
+---
+
 ## Requirements
 
 - Docker installed
@@ -99,7 +117,7 @@ It returns:
 
 # License
 
-MIT License
+Apache-2.0 license
 
 ---
 Build with 🫶
