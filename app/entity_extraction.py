@@ -2,13 +2,29 @@ import json
 import argparse
 import re
 import requests
+import os
 from openai import OpenAI
 from app.utility import Utils
+from dotenv import load_dotenv
 
-def extract_entities_with_llm(nlq, api_key, model, llm_provider, system_prompt_path, max_tokens, temperature):
+load_dotenv(dotenv_path=".env")
+
+
+def extract_entities_with_llm(nlq, api_key, model, system_prompt_path, max_tokens, temperature):
     """
     Uses an LLM to extract the most relevant entities from a natural language query.
-    Cleans and parses the extracted entity names into a clean list (without quotes).
+    Cleans and parses the extracted entity names into a clean Python list of strings.
+    
+    Args:
+        nlq (str): The natural language question.
+        api_key (str): OpenAI API key.
+        model (str): OpenAI model name (e.g., gpt-4o).
+        system_prompt_path (str): Path to the system prompt template.
+        max_tokens (int): Maximum tokens for LLM completion.
+        temperature (float): LLM creativity setting.
+
+    Returns:
+        list[str]: A list of extracted entity names.
     """
 
     # Load prompt template
@@ -18,8 +34,12 @@ def extract_entities_with_llm(nlq, api_key, model, llm_provider, system_prompt_p
     # Inject question into template
     user_prompt = prompt_template.replace("{nlq}", nlq)
 
-    # resolve provider
-    client = OpenAI(api_key=api_key, base_url=Utils.resolve_llm_provider(llm_provider))
+    # Resolve provider
+    api_key = os.getenv("LLM_API_KEY", api_key)  # fallback if not found
+    if not api_key:
+        raise ValueError("❌ API key missing.")
+
+    client = OpenAI(api_key=api_key)
 
     # Call LLM
     response = client.chat.completions.create(
@@ -32,67 +52,29 @@ def extract_entities_with_llm(nlq, api_key, model, llm_provider, system_prompt_p
         temperature=temperature
     )
 
-    print(f"Question: {nlq}")
-    print(f"LLM response: {response.choices[0].message.content}")
+    print(f"✅ Question: {nlq}")
+    print(f"✅ LLM response:\n{response.choices[0].message.content.strip()}")
 
     # Parse entity names
     raw_response = response.choices[0].message.content.strip()
 
-    # Better parsing: use regular expression to extract text inside quotes if they exist
+    # Extract quoted entities first
     entities = re.findall(r'"([^"]+)"', raw_response)
 
-    # If no quotes are found, fallback to simple comma split
+    # If no quotes are found, fallback to comma split
     if not entities:
         entities = [e.strip() for e in raw_response.split(",") if e.strip()]
 
+    # Final cleaning: filter out empty or nonsense entries
+    entities = [e for e in entities if len(e) > 0 and not e.isspace()]
+
+    if not isinstance(entities, list):
+        raise ValueError("❌ Extraction failed, result is not a list.")
+
+    print(f"✅ Extracted entities: {entities}")
     return entities
-
-  
-def get_entities(entity_names, local_graph_location, lang="en"):
-    """
-    Queries a local RDF graph to resolve entity names to URIs.
-
-    Args:
-        entity_names (list): List of entity names to resolve.
-        local_graph_location (str): Path to folder containing RDF files.
-        lang (str): Language tag for labels (default: 'en').
-
-    Returns:
-        dict: Mapping from entity name to resolved URI.
-    """
-
-    resolved_entities = {}
-    lang_tag = f"@{lang}"  # Dynamic language tag
-    predicate = "rdfs:label"  # Standard RDF label
-
-    print(f"[INFO] Querying local RDF graph at {local_graph_location}")
-    print(f"[INFO] Resolving entities: {entity_names}")
-
-    for entity_name in entity_names:
-        sparql_query = f"""
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        SELECT ?entity WHERE {{
-            ?entity {predicate} "{entity_name}"{lang_tag} .
-        }}
-        LIMIT 1
-        """
-
-        print(f"[DEBUG] Running SPARQL for entity: '{entity_name}'")
-
-        try:
-            results = Utils.query_local_graph(local_graph_location, sparql_query)
-            if results:
-                resolved_entities[entity_name] = results[0]  # pick first match
-                print(f"[INFO] Resolved '{entity_name}' -> {results[0]}")
-            else:
-                print(f"[WARNING] No entity found for '{entity_name}'")
-        except Exception as e:
-            print(f"[ERROR] Failed query for '{entity_name}': {e}")
-
-    return resolved_entities
-
     
-def extract_entities(question, dataset):
+def extract_entities(question):
     """
     Extracts entities from the given question using an LLM and resolves them against a SPARQL endpoint.
     
@@ -103,20 +85,21 @@ def extract_entities(question, dataset):
     Returns:
         list: A list of resolved entities.
     """
-    # Load configuration
-    config = load_config()
-    api_key = config["LLM_API_KEY"]
-    model = config["LLM_MODEL"]
-    llm_provider = config["LLM_PROVIDER"]
-    system_prompt_path = config["SYSTEM_PROMPT_PATH"]
-    max_tokens = config["MAX_TOKENS"]
-    temperature = config["TEMPERATURE"]
-    local_graph_location = config["DBPEDIA_GRAPH_LOCATION"]
-
-    # Extract entities using LLM
-    llm_extracted_entities = extract_entities_with_llm(question, api_key, model, llm_provider, system_prompt_path, max_tokens, temperature)
-
-    # Query dataset to get entity IDs for all extracted names
-    dataset_entities_resolved = get_entities(llm_extracted_entities, local_graph_location)
     
-    return dataset_entities_resolved
+    print(f"[INFO] Extracting entities from question: {question}")
+    # Load configuration
+    api_key = os.getenv("LLM_API_KEY")
+    model = os.getenv("LLM_MODEL")
+    system_prompt_path = os.getenv("SYSTEM_PROMPT_ENTITY_EXTRACTION")
+    max_tokens = int(os.getenv("MAX_TOKENS_ENTITY_EXTRACTION"))
+    temperature = float(os.getenv("TEMPERATURE_ENTITY_EXTRACTION"))
+    dbpedia_sparql_url = os.getenv("DBPEDIA_SPARQL_URL")
+
+    # Log configuration variables for debugging
+    print(f"[DEBUG] Model: {model}")
+    print(f"[DEBUG] System Prompt Path entity extraction: {system_prompt_path}")
+    print(f"[DEBUG] Max Tokens entity extraction: {max_tokens}")
+    print(f"[DEBUG] Temperature entity extraction: {temperature}")
+    print(f"[DEBUG] dbpedia_sparql_url: {dbpedia_sparql_url}")
+    
+    return extract_entities_with_llm(question, api_key, model, system_prompt_path, max_tokens, temperature)

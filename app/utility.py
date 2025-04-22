@@ -2,6 +2,8 @@ import os
 import logging
 import requests
 from rdflib import Graph
+import warnings
+
 
 class Utils:
     @staticmethod
@@ -24,14 +26,17 @@ class Utils:
         return value.lower() in ('true', '1', 'yes')
     
     @staticmethod
-    def read_file(file_path: str) -> str:
-        """Reads content from a file and returns it as a string."""
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                return f.read().strip()
-        except Exception as e:
-            print(f"WARNING: Could not read file {file_path}: {e}")
-            return ""
+    def is_local_graph(graph_url: str) -> bool:
+        """Check if the graph URL is a local file path."""
+        url_mapping = {
+            "https://text2sparql.aksw.org/2025/corporate/": True,
+            "https://text2sparql.aksw.org/2025/dbpedia/": False,
+        }
+        
+        if graph_url in url_mapping:
+            return url_mapping[graph_url]
+        else:
+            raise ValueError(f"Unknown graph URL: {graph_url}")
 
     @staticmethod
     def query_sparql_endpoint(sparql_query: str, endpoint_url: str) -> list:
@@ -105,6 +110,8 @@ class Utils:
         Returns:
             list: List of stringified query results (flattened).
         """
+        warnings.filterwarnings("ignore", category=UserWarning)
+        
         g = Graph()
 
         if not os.path.isdir(local_graph_location):
@@ -144,4 +151,34 @@ class Utils:
             return results
         except Exception as e:
             print(f"[ERROR] Failed to execute SPARQL query: {e}")
-            return []
+            return {"error": str(e)} 
+        
+    @staticmethod
+    def is_english_question(question: str) -> bool:
+        """
+        Detects a language tag prefix and translates the question to English if needed.
+
+        Args:
+            question (str): Incoming raw question string, possibly prefixed with 'en: ...', 'de: ...', etc.
+
+        Returns:
+            bool: true of is english.
+        """
+
+        # Try to detect a language tag at the start, like 'de: Frage?'
+        match = re.match(r'^([a-z]{2}):\s*(.*)', question.strip())
+
+        if match:
+            lang = match.group(1)
+            text = match.group(2)
+
+            if lang == "en":
+                print(f"[INFO] Question is English: {text}")
+                return True  # No translation needed
+            else:
+                print(f"[INFO] Detected non-English ({lang}) question, translating: {text}")
+                return False  # Translation needed
+        else:
+            # No detectable prefix: assume it's English already
+            print(f"[INFO] No language tag found, assuming English: {question}")
+            return Null
