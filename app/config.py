@@ -35,7 +35,7 @@ def load_config():
         "LLM_API_KEY": os.getenv("LLM_API_KEY"),
         "LLM_MODEL": os.getenv("LLM_MODEL", "gpt-3.5-turbo"),
         "LLM_PROVIDER": os.getenv("LLM_PROVIDER", "openai"),
-        "SYSTEM_PROMPT_PATH": os.getenv("SYSTEM_PROMPT_PATH", "prompts/entity_extraction.txt"),
+        "SYSTEM_PROMPT_PATH": os.getenv("SYSTEM_PROMPT_PATH", "system_prompts/entity_extraction.txt"),
         "MAX_TOKENS": int(os.getenv("MAX_TOKENS", "100")),
         "TEMPERATURE": float(os.getenv("TEMPERATURE", "0.0")),
         "DBPEDIA_GRAPH_LOCATION": os.getenv("DBPEDIA_GRAPH_LOCATION", "./data/dbpedia")
