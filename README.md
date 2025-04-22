@@ -6,8 +6,6 @@ This software artefact is part of the [TEXT2SPARQL’25](https://text2sparql.aks
 
 The service is built with **FastAPI** and runs inside a **Docker container** inside a [DigitalOcean](https://www.digitalocean.com/) Droplet with 2 vCPUs and a 4GB / 80GB Disk.
 
-By the time of evaluation, the API can be called under http://167.172.162.197:8000.
-
 ---
 
 ## Features
