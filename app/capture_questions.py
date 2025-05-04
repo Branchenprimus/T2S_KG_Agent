@@ -1,8 +1,13 @@
 import os
 import json
 from urllib.parse import urlparse
+from datetime import datetime
+from dotenv import load_dotenv
 
-def capture_questions(question, dataset_url):
+load_dotenv(dotenv_path=".env")
+
+def capture_results(question, dataset_url, entities, sparql_query, query_result):
+
     """
     Captures and appends a new question to a dataset file based on the dataset URL.
 
@@ -12,10 +17,10 @@ def capture_questions(question, dataset_url):
     """
     # Map dataset URL to a local dataset file
     dataset_name = urlparse(dataset_url).path.strip("/").split("/")[-1]  # e.g., 'dbpedia' from URL
-    output_dir = "/root/T2S_KG_Agent/captured_questions"
+    output_dir = os.getenv("CAPTURE_PATH")
     os.makedirs(output_dir, exist_ok=True)
     output_file = os.path.join(output_dir, f"{dataset_name}_captured.json")
-
+    print(f"➡Output file: {output_file}")
     # Initialize file if it doesn't exist
     if not os.path.exists(output_file):
         data = {"questions": []}
@@ -31,16 +36,12 @@ def capture_questions(question, dataset_url):
 
     new_entry = {
         "id": next_id,
-        "question": [
-            {
-                "language": "en",
-                "string": question
-            }
-        ],
-        "query": {
-            "sparql": ""
-        },
-        "answers": []
+        "date_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "question": question,
+        "dataset_url": dataset_url,
+        "extracted_entities": entities,
+        "generated_sparql_query": sparql_query,
+        "query_result": query_result  
     }
 
     data["questions"].append(new_entry)

@@ -1,8 +1,4 @@
-import argparse
-import json
 import os
-import re   
-from rdflib import Graph, Namespace, URIRef, RDFS
 from shexer.shaper import Shaper
 from app.utility import Utils
 from dotenv import load_dotenv
@@ -57,46 +53,52 @@ def generate_shape_from_local_graph(local_graph_location):
 
 
 def generate_combined_shape(dbpedia_sparql_url, entity_labels):
-    """
-    Generates a combined ShEx shape graph from a list of entity labels using DBpedia SPARQL endpoint.
-    """
-
-    shape_map_lines = [
-        f"<http://dbpedia.org/resource/{label.replace(' ', '_')}>@<{label.replace(' ', '_')}>"
-        for label in entity_labels
-    ]
-    shape_map_raw = "\n".join(shape_map_lines)
-
-    namespaces_dict = {
-        "http://dbpedia.org/ontology/": "dbo",
-        "http://dbpedia.org/resource/": "dbr",
-        "http://dbpedia.org/property/": "dbp",
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf",
-        "http://www.w3.org/2000/01/rdf-schema#": "rdfs",
-        "http://www.w3.org/2001/XMLSchema#": "xsd",
-        "http://xmlns.com/foaf/0.1/": "foaf"
-    }
-
-    namespaces_to_ignore = [
-        "http://purl.org/dc/terms/",
-        "http://purl.org/dc/elements/1.1/"
-    ]
+    print(f"Entity labels: {entity_labels}")
+    shape_lines = []
     
-    print(f"shape_map_raw: {shape_map_raw}")
-
-    shaper = Shaper(
-        shape_map_raw=shape_map_raw,
-        url_endpoint=dbpedia_sparql_url,
-        namespaces_dict=namespaces_dict,
-        disable_comments=True,
-        namespaces_to_ignore=namespaces_to_ignore,
-    )
-
     try:
-        return shaper.shex_graph(string_output=True)
+        for label in entity_labels:
+            label_clean = label.replace(' ', '_')
+            entity_id = f"http://dbpedia.org/resource/{label_clean}"
+            shape_label = f"http://shapes.dbpedia.org/{label_clean}"
+            shape_lines.append(f"<{entity_id}>@<{shape_label}>")
+
+        shape_map_raw = "\n".join(shape_lines)
+        print(f"Generated shape map:\n{shape_map_raw}")
+        
+        namespaces_dict = {
+            "http://example.org/": "ex",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf",
+            "http://www.w3.org/2000/01/rdf-schema#": "rdfs",
+            "http://www.w3.org/2001/XMLSchema#": "xsd",
+            "http://xmlns.com/foaf/0.1/": "foaf",
+            "http://dbpedia.org/resource/": "dbr",
+            "http://dbpedia.org/ontology/": "dbo",
+            "http://dbpedia.org/property/": "dbp",
+            "http://dbpedia.org/class/yago/": "yago",
+            "http://purl.org/dc/terms/": "dcterms",
+            "http://www.w3.org/2002/07/owl#": "owl",
+            "http://www.w3.org/2007/05/powder-s#": "powders",
+            "http://www.w3.org/ns/prov#": "prov",
+            "http://umbel.org/umbel/rc/": "umbel",
+            "http://schema.org/": "schema",
+            "http://shapes.dbpedia.org/": "shapes"
+        }
+
+        shaper = Shaper(
+            shape_map_raw=shape_map_raw,
+            url_endpoint=dbpedia_sparql_url,
+            namespaces_dict=namespaces_dict,
+            disable_comments=True,
+        )
+        shape = shaper.shex_graph(string_output=True)
+        print(f"✅ Shape generation successful: {shape}")
+
+        return shape
     except Exception as e:
         print(f"Error generating ShEx graph: {e}")
         return None
+
 
 def generate_shape(entities, dataset):
 

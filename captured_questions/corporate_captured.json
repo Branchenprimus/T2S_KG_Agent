@@ -1,0 +1,606 @@
+{
+    "questions": [
+        {
+            "id": "1",
+            "date_time": "2025-04-27 22:00:49",
+            "question": "In welcher Abteilung ist Frau Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Mrs. Müller?# Attempts: 9"
+        },
+        {
+            "id": "2",
+            "date_time": "2025-04-27 22:01:41",
+            "question": "Was ist der Sinn des Lebens?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: What is the meaning of life?# Attempts: 9"
+        },
+        {
+            "id": "3",
+            "date_time": "2025-04-27 22:02:45",
+            "question": "In which department is Ms. Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Ms. Müller?# Attempts: 9"
+        },
+        {
+            "id": "4",
+            "date_time": "2025-04-27 22:03:42",
+            "question": "In welcher Abteilung ist Frau Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Mrs. Müller?# Attempts: 9"
+        },
+        {
+            "id": "5",
+            "date_time": "2025-04-27 22:05:45",
+            "question": "In which department is Ms. Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Ms. Müller?# Attempts: 0"
+        },
+        {
+            "id": "6",
+            "date_time": "2025-04-27 22:05:54",
+            "question": "In welcher Abteilung ist Frau Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Mrs. Müller?# Attempts: 0"
+        },
+        {
+            "id": "7",
+            "date_time": "2025-04-27 22:10:43",
+            "question": "In which department is Ms. Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Ms. Müller?# Attempts: 0"
+        },
+        {
+            "id": "8",
+            "date_time": "2025-04-27 22:10:51",
+            "question": "In welcher Abteilung ist Frau Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Mrs. Müller?# Attempts: 0"
+        },
+        {
+            "id": "9",
+            "date_time": "2025-04-27 22:11:00",
+            "question": "Was ist der Sinn des Lebens?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: What is the meaning of life?# Attempts: 0"
+        },
+        {
+            "id": "10",
+            "date_time": "2025-04-27 22:11:09",
+            "question": "Wieviele Einwohner hat Leipzig?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: How many inhabitants does Leipzig have?# Attempts: 0"
+        },
+        {
+            "id": "11",
+            "date_time": "2025-04-27 22:13:41",
+            "question": "In which department is Ms. Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Ms. Müller?# Attempts: 0"
+        },
+        {
+            "id": "12",
+            "date_time": "2025-04-27 22:13:49",
+            "question": "In welcher Abteilung ist Frau Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Mrs. Müller?# Attempts: 0"
+        },
+        {
+            "id": "13",
+            "date_time": "2025-04-27 22:13:56",
+            "question": "Was ist der Sinn des Lebens?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: What is the meaning of life?# Attempts: 0"
+        },
+        {
+            "id": "14",
+            "date_time": "2025-04-27 22:14:05",
+            "question": "Wieviele Einwohner hat Leipzig?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: How many inhabitants does Leipzig have?# Attempts: 0"
+        },
+        {
+            "id": "15",
+            "date_time": "2025-04-27 22:15:28",
+            "question": "In which department is Ms. Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Ms. Müller?# Attempts: 0"
+        },
+        {
+            "id": "16",
+            "date_time": "2025-04-27 22:15:37",
+            "question": "In welcher Abteilung ist Frau Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Mrs. Müller?# Attempts: 0"
+        },
+        {
+            "id": "17",
+            "date_time": "2025-04-27 22:15:46",
+            "question": "Was ist der Sinn des Lebens?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: What is the meaning of life?# Attempts: 0"
+        },
+        {
+            "id": "18",
+            "date_time": "2025-04-27 22:15:54",
+            "question": "Wieviele Einwohner hat Leipzig?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: How many inhabitants does Leipzig have?# Attempts: 0"
+        },
+        {
+            "id": "19",
+            "date_time": "2025-04-27 22:33:49",
+            "question": "In which department is Ms. Müller?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "# Failed to generate SPARQL query for question: In which department is Ms. Müller?# Attempts: 0"
+        },
+        {
+            "id": "20",
+            "date_time": "2025-05-02 09:11:30",
+            "question": "In which department is Ms. Brant?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?department WHERE { ?person :name \"Ms. Brant\"; :worksIn ?department. }",
+            "query_result": "# Failed to generate SPARQL query for question: In which department is Ms. Brant?# Attempts: 9"
+        },
+        {
+            "id": "21",
+            "date_time": "2025-05-02 09:12:08",
+            "question": "What is the telephone of Baldwin Dirksen?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?telephone WHERE { ?person <http://xmlns.com/foaf/0.1/name> \"Baldwin Dirksen\" . ?person <http://xmlns.com/foaf/0.1/telephone> ?telephone . }",
+            "query_result": "# Failed to generate SPARQL query for question: What is the telephone of Baldwin Dirksen?# Attempts: 9"
+        },
+        {
+            "id": "22",
+            "date_time": "2025-05-02 09:12:45",
+            "question": "Who is the manager of Heinrich Hoch?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?manager WHERE { ?person <http://example.org/vocab#name> \"Heinrich Hoch\". ?manager <http://example.org/vocab#manages> ?person }",
+            "query_result": "# Failed to generate SPARQL query for question: Who is the manager of Heinrich Hoch?# Attempts: 9"
+        },
+        {
+            "id": "23",
+            "date_time": "2025-05-02 09:13:25",
+            "question": "What is the email of Sabrina from Marketing?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?email WHERE { ?person :name \"Sabrina\"; :email ?email; :worksIn ?department. ?department :name \"Marketing\". }",
+            "query_result": "# Failed to generate SPARQL query for question: What is the email of Sabrina from Marketing?# Attempts: 9"
+        },
+        {
+            "id": "24",
+            "date_time": "2025-05-02 09:14:05",
+            "question": "Who has expertise in Transistors?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?person WHERE { ?person <http://example.org/hasExpertise> ?expertise . FILTER CONTAINS(LCASE(STR(?expertise)), \"transistors\") }",
+            "query_result": "# Failed to generate SPARQL query for question: Who has expertise in Transistors?# Attempts: 9"
+        },
+        {
+            "id": "25",
+            "date_time": "2025-05-02 09:14:41",
+            "question": "Who is our Sensor expert?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?person WHERE { ?person a :Person; :hasRole :SensorExpert }",
+            "query_result": "# Failed to generate SPARQL query for question: Who is our Sensor expert?# Attempts: 9"
+        },
+        {
+            "id": "26",
+            "date_time": "2025-05-02 09:15:20",
+            "question": "Who is the manager of the Data Services department?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?manager WHERE { ?department a :Department ; :name \"Data Services\" . ?department :hasManager ?manager . }",
+            "query_result": "# Failed to generate SPARQL query for question: Who is the manager of the Data Services department?# Attempts: 9"
+        },
+        {
+            "id": "27",
+            "date_time": "2025-05-02 09:15:57",
+            "question": "Which department is responsible for the Sensor Switch M558-2275045?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?department WHERE { ?product a :Product ; :name \"Sensor Switch M558-2275045\" ; :isManagedBy ?department . }",
+            "query_result": "# Failed to generate SPARQL query for question: Which department is responsible for the Sensor Switch M558-2275045?# Attempts: 9"
+        },
+        {
+            "id": "28",
+            "date_time": "2025-05-02 09:16:39",
+            "question": "How many Sensor Switches do we offer?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT (COUNT(?product) AS ?sensorSwitchCount) WHERE { ?product a <http://example.com/SensorSwitch> . }",
+            "query_result": "# Failed to generate SPARQL query for question: How many Sensor Switches do we offer?# Attempts: 9"
+        },
+        {
+            "id": "29",
+            "date_time": "2025-05-02 09:17:18",
+            "question": "What is the name of the Network expert from the Marketing Department?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?name WHERE { ?person a :NetworkExpert; :hasName ?name; :worksInDepartment ?department. ?department a :MarketingDepartment. }",
+            "query_result": "# Failed to generate SPARQL query for question: What is the name of the Network expert from the Marketing Department?# Attempts: 9"
+        },
+        {
+            "id": "30",
+            "date_time": "2025-05-02 09:17:54",
+            "question": "Which departments have Transducer Experts?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT DISTINCT ?department WHERE { ?person a :TransducerExpert . ?person :memberOf ?department . }",
+            "query_result": "# Failed to generate SPARQL query for question: Which departments have Transducer Experts?# Attempts: 9"
+        },
+        {
+            "id": "31",
+            "date_time": "2025-05-02 09:18:32",
+            "question": "Which supplier are available to deliver Compensators?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier WHERE { ?supplier :canDeliver :Compensator. }",
+            "query_result": "# Failed to generate SPARQL query for question: Which supplier are available to deliver Compensators?# Attempts: 9"
+        },
+        {
+            "id": "32",
+            "date_time": "2025-05-02 09:19:09",
+            "question": "How many suppliers do we have in France?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT (COUNT(?supplier) AS ?numberOfSuppliers) WHERE { ?supplier a :Supplier; :locatedIn ?location. ?location :countryName \"France\". }",
+            "query_result": "# Failed to generate SPARQL query for question: How many suppliers do we have in France?# Attempts: 9"
+        },
+        {
+            "id": "33",
+            "date_time": "2025-05-02 09:19:47",
+            "question": "Which supplier in France delivers Compensators?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier WHERE { ?supplier a :Supplier ; :delivers :Compensator ; :locatedIn :France . }",
+            "query_result": "# Failed to generate SPARQL query for question: Which supplier in France delivers Compensators?# Attempts: 9"
+        },
+        {
+            "id": "34",
+            "date_time": "2025-05-02 09:20:26",
+            "question": "What is the cheapest Encoder we can get from a french or german supplier?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?encoder WHERE { ?encoder a :Encoder; :price ?price; :supplier ?supplier. ?supplier :country ?country. FILTER(?country IN (\"France\", \"Germany\")) } ORDER BY ASC(?price) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: What is the cheapest Encoder we can get from a french or german supplier?# Attempts: 9"
+        },
+        {
+            "id": "35",
+            "date_time": "2025-05-02 09:21:06",
+            "question": "Do we have suppliers in Toulouse?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier WHERE { ?supplier a :Supplier ; :isLocatedIn ?location . ?location :cityName \"Toulouse\" . }",
+            "query_result": "# Failed to generate SPARQL query for question: Do we have suppliers in Toulouse?# Attempts: 9"
+        },
+        {
+            "id": "36",
+            "date_time": "2025-05-02 09:21:45",
+            "question": "Which suppliers do we have in Toulouse?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier WHERE { ?supplier a :Supplier ; :locatedIn [ :cityName \"Toulouse\" ] . }",
+            "query_result": "# Failed to generate SPARQL query for question: Which suppliers do we have in Toulouse?# Attempts: 9"
+        },
+        {
+            "id": "37",
+            "date_time": "2025-05-02 09:22:20",
+            "question": "What is the cheapest Oscillator we have?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?oscillator WHERE { ?oscillator a :Oscillator; :price ?price. } ORDER BY ASC(?price) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: What is the cheapest Oscillator we have?# Attempts: 9"
+        },
+        {
+            "id": "38",
+            "date_time": "2025-05-02 09:22:57",
+            "question": "What is the most expensive service we offer?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?service WHERE { ?service a :Service; :price ?price. } ORDER BY DESC(?price) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: What is the most expensive service we offer?# Attempts: 9"
+        },
+        {
+            "id": "39",
+            "date_time": "2025-05-02 09:23:37",
+            "question": "Who is responsible for the most expensive service we offer?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?person WHERE { ?service a :Service; :cost ?cost; :responsible ?person. } ORDER BY DESC(?cost) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: Who is responsible for the most expensive service we offer?# Attempts: 9"
+        },
+        {
+            "id": "40",
+            "date_time": "2025-05-02 09:24:16",
+            "question": "What is the heaviest coil that does not exceed a base area of 15x15 milimeter?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?coil ?weight WHERE { ?coil :hasWeight ?weight ; :hasBaseWidth ?width ; :hasBaseLength ?length . FILTER(?width <= 15 && ?length <= 15) } ORDER BY DESC(?weight) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: What is the heaviest coil that does not exceed a base area of 15x15 millimeter?# Attempts: 9"
+        },
+        {
+            "id": "41",
+            "date_time": "2025-05-02 09:24:51",
+            "question": "What products are compatible with the U990 LCD Inductor?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?product WHERE { ?product :isCompatibleWith <http://example.org/products/U990_LCD_Inductor>. }",
+            "query_result": "# Failed to generate SPARQL query for question: What products are compatible with the U990 LCD Inductor?# Attempts: 9"
+        },
+        {
+            "id": "42",
+            "date_time": "2025-05-02 09:25:28",
+            "question": "What products can I get from US suppliers that are compatible with the U990 LCD Inductor?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?product WHERE { ?product :compatibleWith :U990_LCD_Inductor . ?supplier :locatedIn :US . ?product :suppliedBy ?supplier }",
+            "query_result": "# Failed to generate SPARQL query for question: What products can I get from US suppliers that are compatible with the U990 LCD Inductor?# Attempts: 9"
+        },
+        {
+            "id": "43",
+            "date_time": "2025-05-02 09:26:04",
+            "question": "What is the pontiometer with the smallest volume?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?pontiometer WHERE { ?pontiometer a :Pontiometer; :volume ?volume. } ORDER BY ASC(?volume) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: What is the pontiometer with the smallest volume?# Attempts: 9"
+        },
+        {
+            "id": "44",
+            "date_time": "2025-05-02 09:26:41",
+            "question": "Which coil has the highest density?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?coil WHERE { ?coil a :Coil; :density ?density. } ORDER BY DESC(?density) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: Which coil has the highest density?# Attempts: 9"
+        },
+        {
+            "id": "45",
+            "date_time": "2025-05-02 09:27:19",
+            "question": "In which cities are our US suppliers for LCDs?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT DISTINCT ?city WHERE { ?supplier a :Supplier ; :country \"US\" ; :locatedIn ?city ; :supplies :LCD . }",
+            "query_result": "# Failed to generate SPARQL query for question: In which cities are our US suppliers for LCDs?# Attempts: 9"
+        },
+        {
+            "id": "46",
+            "date_time": "2025-05-02 09:27:57",
+            "question": "Give me a phone directory of everyone on staff who does not manage anyone, I need name, email, and phone, sorted by name?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?name ?email ?phone WHERE { ?person a :StaffMember; :name ?name; :email ?email; :phone ?phone. FILTER NOT EXISTS { ?subordinate :manager ?person } } ORDER BY ?name",
+            "query_result": "# Failed to generate SPARQL query for question: Give me a phone directory of everyone on staff who does not manage anyone, I need name, email, and phone, sorted by name?# Attempts: 9"
+        },
+        {
+            "id": "47",
+            "date_time": "2025-05-02 09:28:35",
+            "question": "Do we have any service that does apply to a BOM where parts are sourced from Russia?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT DISTINCT ?service WHERE { ?bom :hasPart ?part. ?part :sourcedFrom ?source. ?source :country ?country. FILTER(?country = \"Russia\"). ?service :appliesTo ?bom. }",
+            "query_result": "# Failed to generate SPARQL query for question: Do we have any service that does apply to a BOM where parts are sourced from Russia?# Attempts: 9"
+        },
+        {
+            "id": "48",
+            "date_time": "2025-05-02 09:29:15",
+            "question": "What suppliers - I need name, country and price - deliver the 6th to 10th most expensive hardware items.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplierName ?country ?price WHERE { ?item a :Hardware . ?item :price ?price . ?item :deliveredBy ?supplier . ?supplier :name ?supplierName . ?supplier :country ?country } ORDER BY DESC(?price) OFFSET 5 LIMIT 5",
+            "query_result": "# Failed to generate SPARQL query for question: What suppliers - I need name, country and price - deliver the 6th to 10th most expensive hardware items.# Attempts: 9"
+        },
+        {
+            "id": "49",
+            "date_time": "2025-05-02 09:29:51",
+            "question": "Which department have more than 5 employees? I need their names and the number of employees.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?departmentName (COUNT(?employee) AS ?numberOfEmployees) WHERE { ?department a :Department ; :name ?departmentName ; :hasEmployee ?employee . } GROUP BY ?departmentName HAVING (COUNT(?employee) > 5)",
+            "query_result": "# Failed to generate SPARQL query for question: Which department have more than 5 employees? I need their names and the number of employees.# Attempts: 9"
+        },
+        {
+            "id": "50",
+            "date_time": "2025-05-02 09:30:38",
+            "question": "Per product category, what's our lightest and heaviest hardware item?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?category ?lightestItem ?heaviestItem WHERE { { SELECT ?category (MIN(?weight) AS ?minWeight) (MAX(?weight) AS ?maxWeight) WHERE { ?item a :HardwareItem; :category ?category; :weight ?weight. } GROUP BY ?category } { SELECT ?category ?lightestItem WHERE { ?lightestItem a :HardwareItem; :category ?category; :weight ?weight. } HAVING (MIN(?weight) = ?minWeight) } { SELECT ?category ?heaviestItem WHERE { ?heaviestItem a :HardwareItem; :category ?category; :weight ?weight. } HAVING (MAX(?weight) = ?maxWeight) } }",
+            "query_result": "# Failed to generate SPARQL query for question: Per product category, what's our lightest and heaviest hardware item?# Attempts: 9"
+        },
+        {
+            "id": "51",
+            "date_time": "2025-05-02 09:31:19",
+            "question": "For each supplier, what's the average price (in EUR) of what they sell, round reasonably?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier (ROUND(AVG(?price)) AS ?averagePriceEUR) WHERE { ?product :soldBy ?supplier ; :hasPrice ?priceRecord . ?priceRecord :amount ?price ; :currency :EUR . } GROUP BY ?supplier",
+            "query_result": "# Failed to generate SPARQL query for question: For each supplier, what's the average price (in EUR) of what they sell, round reasonably?# Attempts: 9"
+        },
+        {
+            "id": "52",
+            "date_time": "2025-05-02 09:31:54",
+            "question": "Are there departments with no manager assigned?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?department WHERE { ?department a :Department . MINUS { ?department :hasManager ?manager } }",
+            "query_result": "# Failed to generate SPARQL query for question: Are there departments with no manager assigned?# Attempts: 9"
+        },
+        {
+            "id": "53",
+            "date_time": "2025-05-02 09:32:33",
+            "question": "I need to update my supplier rolodex, give me every supplier's name and all address details.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplierName ?street ?city ?postalCode ?country WHERE { ?supplier a :Supplier . ?supplier :name ?supplierName . ?supplier :hasAddress ?address . OPTIONAL { ?address :street ?street . } OPTIONAL { ?address :city ?city . } OPTIONAL { ?address :postalCode ?postalCode . } OPTIONAL { ?address :country ?country . } }",
+            "query_result": "# Failed to generate SPARQL query for question: I need to update my supplier rolodex, give me every supplier's name and all address details.# Attempts: 9"
+        },
+        {
+            "id": "54",
+            "date_time": "2025-05-02 09:33:13",
+            "question": "For every product, list what other products it is compatible with and the price differences between both.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?product1 ?product2 ?priceDifference WHERE { ?product1 :isCompatibleWith ?product2 . OPTIONAL { ?product1 :hasPrice ?price1 . ?product2 :hasPrice ?price2 . BIND(ABS(?price1 - ?price2) AS ?priceDifference) } }",
+            "query_result": "# Failed to generate SPARQL query for question: For every product, list what other products it is compatible with and the price differences between both.# Attempts: 9"
+        },
+        {
+            "id": "55",
+            "date_time": "2025-05-02 09:33:52",
+            "question": "Which area of expertise is most relevant among our products, what are the top three skills?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?expertiseArea (GROUP_CONCAT(DISTINCT ?skill; separator=\", \") AS ?topSkills) WHERE { ?product :hasExpertiseArea ?expertiseArea . ?expertiseArea :hasSkill ?skill . } GROUP BY ?expertiseArea ORDER BY DESC(COUNT(DISTINCT ?skill)) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: Which area of expertise is most relevant among our products, what are the top three skills?# Attempts: 9"
+        },
+        {
+            "id": "56",
+            "date_time": "2025-05-02 09:34:33",
+            "question": "For each Bill of Material, how many parts does it contain and what is the total material quantity — show me only those BOMs exceeding 600 total items and order them descending.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?bom (COUNT(?part) AS ?partCount) (SUM(?quantity) AS ?totalQuantity) WHERE { ?bom a :BillOfMaterial; :containsPart ?part. ?part :materialQuantity ?quantity. } GROUP BY ?bom HAVING (SUM(?quantity) > 600) ORDER BY DESC(?totalQuantity)",
+            "query_result": "# Failed to generate SPARQL query for question: For each Bill of Material, how many parts does it contain and what is the total material quantity — show me only those BOMs exceeding 600 total items and order them descending.# Attempts: 9"
+        },
+        {
+            "id": "57",
+            "date_time": "2025-05-02 09:35:14",
+            "question": "I want to update my contact list, for each Employee give me name, email, phone number and the department they belong to as well as their direct report.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?employee ?name ?email ?phone ?department ?directReport WHERE { ?employee a :Employee . OPTIONAL { ?employee :name ?name } OPTIONAL { ?employee :email ?email } OPTIONAL { ?employee :phone ?phone } OPTIONAL { ?employee :belongsToDepartment ?department } OPTIONAL { ?employee :directReport ?directReport } }",
+            "query_result": "# Failed to generate SPARQL query for question: I want to update my contact list, for each Employee give me name, email, phone number and the department they belong to as well as their direct report.# Attempts: 9"
+        },
+        {
+            "id": "58",
+            "date_time": "2025-05-02 09:35:52",
+            "question": "Which hardware items are wider than they are tall, and have a depth under 50 mm? List their dimensions.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?item ?width ?height ?depth WHERE { ?item a :HardwareItem; :width ?width; :height ?height; :depth ?depth. FILTER(?width > ?height && ?depth < 50) }",
+            "query_result": "# Failed to generate SPARQL query for question: Which hardware items are wider than they are tall, and have a depth under 50 mm? List their dimensions.# Attempts: 9"
+        },
+        {
+            "id": "59",
+            "date_time": "2025-05-02 09:36:32",
+            "question": "Which hardware items - list id and name - have no active product manager?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?id ?name WHERE { ?item a :HardwareItem; :id ?id; :name ?name. OPTIONAL { ?item :hasProductManager ?manager. ?manager :status ?status. } FILTER (!bound(?manager) || ?status != \"active\") }",
+            "query_result": "# Failed to generate SPARQL query for question: Which hardware items - list id and name - have no active product manager?# Attempts: 9"
+        },
+        {
+            "id": "60",
+            "date_time": "2025-05-02 09:37:16",
+            "question": "For each manager, what percentage of their entire team work in the same department as the manager?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?manager (100.0 * ?sameDeptCount / ?totalTeam AS ?percentage) WHERE { { SELECT ?manager (COUNT(?teamMember) AS ?totalTeam) WHERE { ?manager :manages ?teamMember. } GROUP BY ?manager } { SELECT ?manager (COUNT(?teamMember) AS ?sameDeptCount) WHERE { ?manager :manages ?teamMember. ?manager :worksIn ?dept. ?teamMember :worksIn ?dept. } GROUP BY ?manager } FILTER(?totalTeam > 0) }",
+            "query_result": "# Failed to generate SPARQL query for question: For each manager, what percentage of their entire team work in the same department as the manager?# Attempts: 9"
+        },
+        {
+            "id": "61",
+            "date_time": "2025-05-02 09:37:54",
+            "question": "Which Bill-of-Material has the highest average unit cost of its hardware parts, and what is that average?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?bom (AVG(?unitCost) AS ?averageUnitCost) WHERE { ?bom :hasPart ?part . ?part :type :HardwarePart . ?part :unitCost ?unitCost . } GROUP BY ?bom ORDER BY DESC(?averageUnitCost) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: Which Bill-of-Material has the highest average unit cost of its hardware parts, and what is that average?# Attempts: 9"
+        },
+        {
+            "id": "62",
+            "date_time": "2025-05-02 09:38:30",
+            "question": "Show me any cycles of product compatibility — i.e. product A says it's compatible with B, and B says it's compatible with A (mutual pairs).",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?productA ?productB WHERE { ?productA :isCompatibleWith ?productB . ?productB :isCompatibleWith ?productA . }",
+            "query_result": "# Failed to generate SPARQL query for question: Show me any cycles of product compatibility — i.e. product A says it's compatible with B, and B says it's compatible with A (mutual pairs).# Attempts: 9"
+        },
+        {
+            "id": "63",
+            "date_time": "2025-05-02 09:39:19",
+            "question": "Which hardware items have dimensions in the top 10 % of all widths, and what are their IDs, names and widths?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?hardwareID ?name ?width WHERE { ?hardware a :HardwareItem; :hasID ?hardwareID; :hasName ?name; :hasWidth ?width. { SELECT ?width (COUNT(?w) AS ?rank) WHERE { ?item a :HardwareItem; :hasWidth ?w. } GROUP BY ?width ORDER BY DESC(?width) } FILTER(?rank <= (CEIL((SELECT (COUNT(?x) AS ?total) WHERE { ?x a :HardwareItem; :hasWidth ?y. }) * 0.1))) } ORDER BY DESC(?width)",
+            "query_result": "# Failed to generate SPARQL query for question: Which hardware items have dimensions in the top 10 % of all widths, and what are their IDs, names and widths?# Attempts: 9"
+        },
+        {
+            "id": "64",
+            "date_time": "2025-05-02 09:39:59",
+            "question": "Which supplier delivers the most reliable Inductor?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier WHERE { ?inductor a :Inductor . ?delivery :delivers ?inductor ; :bySupplier ?supplier . ?inductor :reliability ?reliability . } ORDER BY DESC(?reliability) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: Which supplier delivers the most reliable Inductor?# Attempts: 9"
+        },
+        {
+            "id": "65",
+            "date_time": "2025-05-02 09:40:40",
+            "question": "What are the top 5 suppliers with best average reliability over their products.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?supplier (AVG(?reliability) AS ?averageReliability) WHERE { ?product :hasSupplier ?supplier . ?product :hasReliability ?reliability . } GROUP BY ?supplier ORDER BY DESC(?averageReliability) LIMIT 5",
+            "query_result": "# Failed to generate SPARQL query for question: What are the top 5 suppliers with best average reliability over their products.# Attempts: 9"
+        },
+        {
+            "id": "66",
+            "date_time": "2025-05-02 09:41:21",
+            "question": "From which countries are the BOM parts of our SkySync MechWave delivered?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT DISTINCT ?country WHERE { :SkySyncMechWave :hasPart ?part. ?part :deliveredFrom ?location. ?location :country ?country. }",
+            "query_result": "# Failed to generate SPARQL query for question: From which countries are the BOM parts of our SkySync MechWave delivered?# Attempts: 9"
+        },
+        {
+            "id": "67",
+            "date_time": "2025-05-02 09:41:57",
+            "question": "Show me all BOMs which have at least on part from a polish supplier.",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT DISTINCT ?bom WHERE { ?bom :hasPart ?part . ?part :hasSupplier ?supplier . ?supplier :country \"Poland\" }",
+            "query_result": "# Failed to generate SPARQL query for question: Show me all BOMs which have at least one part from a Polish supplier.# Attempts: 9"
+        },
+        {
+            "id": "68",
+            "date_time": "2025-05-02 09:42:35",
+            "question": "How many suppliers can deliver alternative compatible products for the K367 Strain Encoder?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT (COUNT(DISTINCT ?supplier) AS ?supplierCount) WHERE { ?alternativeProduct :compatibleWith :K367_Strain_Encoder . ?supplier :canDeliver ?alternativeProduct . }",
+            "query_result": "# Failed to generate SPARQL query for question: How many suppliers can deliver alternative compatible products for the K367 Strain Encoder?# Attempts: 9"
+        },
+        {
+            "id": "69",
+            "date_time": "2025-05-02 09:43:17",
+            "question": "Which department is resposible for the most product and how many product are this?",
+            "dataset_url": "https://text2sparql.aksw.org/2025/corporate/",
+            "extracted_entities": null,
+            "generated_sparql_query": "SELECT ?department (COUNT(?product) AS ?productCount) WHERE { ?product a :Product . ?product :managedBy ?department . } GROUP BY ?department ORDER BY DESC(?productCount) LIMIT 1",
+            "query_result": "# Failed to generate SPARQL query for question: Which department is responsible for the most products and how many products are there?# Attempts: 9"
+        }
+    ]
+}

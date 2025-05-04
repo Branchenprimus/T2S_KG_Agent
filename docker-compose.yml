@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  t2s_kg_agent_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: t2s_kg_agent_dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    command: >
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --log-level debug
+
+  t2s_kg_agent_prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: t2s_kg_agent_prod
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    command: >
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4 --log-level info

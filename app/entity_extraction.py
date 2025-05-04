@@ -1,10 +1,6 @@
-import json
-import argparse
 import re
-import requests
 import os
 from openai import OpenAI
-from app.utility import Utils
 from dotenv import load_dotenv
 
 load_dotenv(dotenv_path=".env")
